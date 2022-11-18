@@ -22,7 +22,8 @@ public class NewPasteinRuTest extends BaseTest {
                 .chooseTextStyle()
                 .pressSendButtonWithEnteredData()
                 .getResultPageText();
-        Assertions.assertThat(resultBoxText).as("input text is not equal to result")
+        Assertions.assertThat(resultBoxText)
+                .as("Input text is not equal to result")
                 .isEqualTo(inputText);
     }
 }
