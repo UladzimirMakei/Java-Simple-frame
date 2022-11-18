@@ -21,6 +21,6 @@ public class PasteinLoginTest extends BaseTest {
                 .navigateToLoginPage()
                 .login(newUser)
                 .isChangePasswordFieldDisplayed();
-        Assertions.assertThat(isChangePasswordFieldDisplayed).isTrue();
+        Assertions.assertThat(isChangePasswordFieldDisplayed).isFalse();
     }
 }

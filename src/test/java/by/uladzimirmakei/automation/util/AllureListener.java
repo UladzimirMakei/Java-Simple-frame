@@ -1,20 +1,28 @@
 package by.uladzimirmakei.automation.util;
 
+import by.uladzimirmakei.automation.driver.DriverSingleton;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import static by.uladzimirmakei.automation.util.Screenshot.saveScreenshot;
 
 public class AllureListener implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        saveScreenshot();
+        WebDriver driver = DriverSingleton.getDriver();
+        saveScreenshotPNG(driver);
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        saveScreenshot();
+        WebDriver driver = DriverSingleton.getDriver();
+        saveScreenshotPNG(driver);
+    }
+
+    private byte[] saveScreenshotPNG(WebDriver driver) {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }
 
