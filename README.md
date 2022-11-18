@@ -8,7 +8,8 @@ Simple java automation framework for testing
 
 ## General info
 Run from command line: 
-mvn -Dbrowser=chrome -Denvironment=dev clean test
+mvn   -Dbrowser=chrome -Denvironment=dev 
+-DsuiteXml="src/test/resources/testng-smoke.xml" clean test
 	
 ## Design patterns
 Project is created with design patterns:
