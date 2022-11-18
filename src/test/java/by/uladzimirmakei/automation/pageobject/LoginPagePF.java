@@ -37,7 +37,7 @@ public class LoginPagePF extends BasePage {
 
     public boolean isChangePasswordFieldDisplayed() {
         WebElement wrongPasswordText = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.visibilityOf(driver.findElement(changePasswordField)));
+                .until(ExpectedConditions.visibilityOfElementLocated(changePasswordField));
         return wrongPasswordText.isDisplayed();
     }
 }
