@@ -23,6 +23,6 @@ public class PasteinLoginTest extends BaseTest {
                 .isChangePasswordFieldDisplayed();
         Assertions.assertThat(isChangePasswordFieldDisplayed)
                 .as("Wrong password message is not displayed when non-existing user log in")
-                .isFalse();
+                .isTrue();
     }
 }
